@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+      <ion-title>
+          Ionic Blank
+      </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-content" padding>
+ 
+    
+    <div class="container" align="center">
+        <img src="../assets/imgs/log.png" alt="HTML5 Icon" width="128" height="128">
+        <h1 id="par" >Codetribe</h1>
+        <hr>
+        <form [formGroup]="userFG" (ngSubmit)="formSubmit(userFG)">
+      
+            <ion-list no-lines>
+                <ion-item class="item">
+                   
+                    <ion-label id="parr" fixed>
+                        <ion-icon  ios="ios-contact" md="md-contact"></ion-icon>
+                      Username:</ion-label>
+                    <ion-input id="par" formControlName="username" type="text"></ion-input>
+                </ion-item>
+                <ion-item no-lines *ngIf="userFG.controls['username'].invalid">
+                    <p ion-text color="danger">Please Provide a valid username with 5 or more characters</p>
+                </ion-item>
+      
+                <ion-item class="item">
+                    <ion-label fixed id="parr">
+                        <ion-icon ios="ios-lock" md="md-lock"></ion-icon>
+                      Password:</ion-label>
+                    <ion-input id="par" formControlName="password" type="password"></ion-input>
+                </ion-item>
+            </ion-list>
+            <button ion-button color="secondary" round (click)="homep()" [disabled]="userFG.invalid" type="submit">SIGN IN</button>
+           
+          </form>
+          <P id="par">DON'T HAVE ACCOUNT?</P>
+          <button clear ion-button color="secondary" (click)=" profile()">SIGN UP</button>
+
+
+    </div>
+
+ 
+</ion-content>

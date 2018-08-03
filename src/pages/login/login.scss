@@ -1,4 +1,5 @@
-page-home {
+page-login {
+
     .login-content {
         background-image: url('../../assets/imgs/loog.jpg');
         background-repeat :no-repeat;
@@ -17,16 +18,16 @@ page-home {
      }
 
         .item{
-        
-        background-image: url('../../assets/imgs/detail.jpg');
-        background-repeat :no-repeat;
-        background-size:cover;
+        background-color:transparent;
     }
 
     #par{
         color:white;
     }
+    
     #parr{
         color:gray;
     }
+    
+    
 }

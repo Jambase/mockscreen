@@ -1,0 +1,79 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Ionic Blank
+        </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content  class="login-content" padding>
+
+  <div class="container" align="center">
+      <img src="../assets/imgs/log.png" alt="HTML5 Icon" width="128" height="128">
+        <h1 id="par" >Codetribe</h1>
+     <br>
+      <form [formGroup]="userFG" (ngSubmit)="formSubmit(userFG)">
+  
+          <ion-list no-lines>
+              <ion-item>
+                  <ion-label id="parr" fixed>
+                      <ion-icon ios="ios-body" md="md-body"></ion-icon>
+                    Name:</ion-label>
+                  <ion-input  id="par" formControlName="name" type="text"></ion-input>
+              </ion-item>
+              
+              <ion-item>
+                  <ion-label id="parr" fixed>
+                      <ion-icon  ios="ios-contact" md="md-contact"></ion-icon>
+                    Username:</ion-label>
+                  <ion-input  id="par" formControlName="username" type="text"></ion-input>
+              </ion-item>
+              <ion-item no-lines *ngIf="userFG.controls['username'].invalid">
+                  <p ion-text color="danger">Please Provide a valid username with 5 or more characters</p>
+              </ion-item>
+  
+              <ion-item>
+                  <ion-label id="parr" fixed>
+                      <ion-icon ios="ios-mail" md="md-mail"></ion-icon>
+                    Email:</ion-label>
+                  <ion-input  id="par" formControlName="email" type="email"></ion-input>
+              </ion-item>
+  
+  
+  
+              <ion-item>
+                  <ion-label id="parr" fixed>
+                      <ion-icon ios="ios-lock" md="md-lock"></ion-icon>
+                    Password:</ion-label>
+                  <ion-input  id="par" formControlName="password" type="password"></ion-input>
+              </ion-item>
+              <div formGroupName="preferences">
+  
+                  <ion-item>
+                      <ion-label id="parr" fixed>
+                          <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon>
+                        Date of birth:</ion-label>
+                      <ion-datetime id="par" formControlName="date" displayFormat="MM/DD/YYYY" pickerFormat="MM/DD/YYYY"></ion-datetime>
+                  </ion-item>
+                  <ion-item>
+                      <ion-label id="parr" fixed>
+                          <ion-icon ios="ios-book" md="md-book"></ion-icon>
+                        Skill:</ion-label>
+                      <ion-textarea id="par" formControlName="skill" type="text"></ion-textarea>
+                  </ion-item>
+              </div>
+  
+  
+  
+          </ion-list>
+          <button ion-button color="secondary" round [disabled]="userFG.invalid" type="submit" (click)="details()">Save</button>
+  
+  
+      </form>
+      <button ion-button color="secondary" clear (click)="login()">LOGOUT</button>
+
+  </div>
+
+ 
+
+</ion-content>
